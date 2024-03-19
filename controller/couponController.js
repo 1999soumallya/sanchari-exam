@@ -43,7 +43,7 @@ exports.deleteVoucher = async (req, res) => {
     try {
         const { code } = req.params
 
-        couponModel.findOneAndDelete({ code }).then(() => {
+        couponModel.findByIdAndDelete(code).then(() => {
             res.status(200).json({ message: 'Voucher successfully deleted', success: true })
         }).catch(err => {
             res.status(400).json({ message: 'Voucher deletion process failed', success: false, error: err.stack })

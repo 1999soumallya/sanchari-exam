@@ -8,6 +8,6 @@ exports.validateRequest = async (req, res, next) => {
     return res.status(400).json({
         message: 'Provide all mediatory fields',
         success: false,
-        errors: validate.array()
+        errors: validate(req).array()
     })
 }
