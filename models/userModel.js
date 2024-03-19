@@ -16,6 +16,9 @@ const userSchema = new mongoose.Schema({
     couponCode: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'coupons'
+    },
+    couponUpdate: {
+        type: Date
     }
 }, { timestamps: true })
 

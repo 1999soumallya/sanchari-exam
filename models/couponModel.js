@@ -4,9 +4,6 @@ const couponSchema = new mongoose.Schema({
     code: {
         type: String,
         required: true
-    },
-    couponUpdate: {
-        type: Date
     }
 }, { timestamps: true })
 
