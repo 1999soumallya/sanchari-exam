@@ -1,4 +1,4 @@
-const { body } = require("express-validator");
+const { body, param } = require("express-validator");
 const userModel = require("../models/userModel");
 
 exports.registrationValidation = [
@@ -30,4 +30,8 @@ exports.registrationValidation = [
 exports.loginValidation = [
     body('email').notEmpty({ ignore_whitespace: true }).withMessage('Provide your email id for login'),
     body('password').notEmpty({ ignore_whitespace: true }).withMessage('Provide your password for login').isLength({ min: 8 }).withMessage('Provide valid password for login'),
+]
+
+exports.updateCouponCode = [
+    param('code').notEmpty({ ignore_whitespace: true }).withMessage('Provide valid coupon id').isMongoId().withMessage('Provide valid coupon code id'),
 ]
